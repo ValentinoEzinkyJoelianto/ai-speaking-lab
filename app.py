@@ -18,7 +18,7 @@ if "last_mic_id" not in st.session_state:
     st.session_state.last_mic_id = None
 
 # --- SETUP API KEY (GROQ) ---
-api_key = "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" 
+api_key = st.secrets["GROQ_API_KEY"]
 try:
     client = Groq(api_key=api_key)
 except Exception as e:
@@ -211,3 +211,4 @@ with tab_upload:
                 except Exception as e:
 
                     st.error(f"Error: {e}")
+
